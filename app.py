@@ -8,7 +8,7 @@ from database import db
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config['UPLOAD_FOLDER'] = 'uploads'
-app.config['SECRET_KEY'] = 'your_secret_key'  # Установите свой секретный ключ
+app.config['SECRET_KEY'] = 'your_secret_key'
 
 db.init_app(app)
 
@@ -21,7 +21,7 @@ if not os.path.exists(app.config['UPLOAD_FOLDER']):
 
 @app.route('/')
 def index():
-    return redirect(url_for('register'))  # Перенаправление на страницу регистрации
+    return redirect(url_for('register'))
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -40,7 +40,7 @@ def register():
         db.session.add(new_user)
         db.session.commit()
         flash('Регистрация успешна! Пожалуйста, войдите.')
-        return redirect(url_for('login'))  # Перенаправление на страницу входа после регистрации
+        return redirect(url_for('login'))
 
     return render_template('register.html')
 
@@ -54,7 +54,7 @@ def login():
 
         if user and user.verify_password(password):
             flash('Вход успешен!')
-            return redirect(url_for('index_page'))  # Перенаправление на главную страницу после входа
+            return redirect(url_for('index_page'))
 
         flash('Неправильное имя пользователя или пароль')
         return redirect(url_for('login'))
@@ -69,7 +69,7 @@ def upload():
         if file:
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return redirect(url_for('index_page'))  # Перенаправление на главную страницу после загрузки файла
+            return redirect(url_for('index_page'))
 
     return render_template('upload.html')
 
