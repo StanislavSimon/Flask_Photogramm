@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload</title>
+    <style>
+        body {
+            background-color: #ffccff; /* Розовый фон */
+            font-family: 'Arial', sans-serif; /* Красивый шрифт */
+            text-align: center; /* Центрируем текст */
+            padding: 20px; /* Отступы */
+        }
+
+        h1 {
+            color: #d5006d; /* Цвет заголовка */
+        }
+
+        input[type="file"] {
+            margin: 10px; /* Отступы между полями */
+        }
+
+        button {
+            background-color: #d5006d; /* Цвет фона кнопки */
+            color: white; /* Цвет текста кнопки */
+            padding: 10px 20px; /* Отступы внутри кнопки */
+            border: none; /* Убираем рамку */
+            border-radius: 5px; /* Скругленные углы */
+            cursor: pointer; /* Курсор при наведении */
+            transition: background-color 0.3s; /* Плавный переход цвета */
+        }
+
+        button:hover {
+            background-color: #a2004d; /* Цвет кнопки при наведении */
+        }
+
+        a {
+            text-decoration: none; /* Убираем подчеркивание */
+            color: white; /* Цвет текста ссылки */
+            background-color: #d5006d; /* Цвет фона ссылки */
+            padding: 10px 20px; /* Отступы внутри ссылки */
+            border-radius: 5px; /* Скругленные углы */
+            display: inline-block; /* Отображаем ссылку как кнопку */
+            margin-top: 10px; /* Отступ сверху */
+            transition: background-color 0.3s; /* Плавный переход цвета */
+        }
+
+        a:hover {
+            background-color: #a2004d; /* Цвет ссылки при наведении */
+        }
+    </style>
+</head>
+<body>
+    <h1>Фотограмм</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit">Загрузить</button>
+    </form>
+    <a href="{{ url_for('index_page') }}">Вернуться на главную</a>
+</body>
+</html>

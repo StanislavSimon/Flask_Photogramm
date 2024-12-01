@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <style>
+        body {
+            background-color: #ffccff; /* Розовый фон */
+            font-family: 'Arial', sans-serif; /* Красивый шрифт */
+            text-align: center; /* Центрируем текст */
+            padding: 20px; /* Отступы */
+        }
+
+        h1 {
+            color: #d5006d; /* Цвет заголовка */
+        }
+
+        input[type="text"], input[type="password"] {
+            padding: 10px; /* Отступы внутри полей ввода */
+            margin: 10px; /* Отступы между полями ввода */
+            border: 1px solid #d5006d; /* Цвет рамки */
+            border-radius: 5px; /* Скругленные углы */
+            width: 200px; /* Ширина полей ввода */
+        }
+
+        button {
+            background-color: #d5006d; /* Цвет фона кнопки */
+            color: white; /* Цвет текста кнопки */
+            padding: 10px 20px; /* Отступы внутри кнопки */
+            border: none; /* Убираем рамку */
+            border-radius: 5px; /* Скругленные углы */
+            cursor: pointer; /* Курсор при наведении */
+            transition: background-color 0.3s; /* Плавный переход цвета */
+        }
+
+        button:hover {
+            background-color: #a2004d; /* Цвет кнопки при наведении */
+        }
+
+        a {
+            text-decoration: none; /* Убираем подчеркивание */
+            color: white; /* Цвет текста ссылки */
+            background-color: #d5006d; /* Цвет фона ссылки */
+            padding: 10px 20px; /* Отступы внутри ссылки */
+            border-radius: 5px; /* Скругленные углы */
+            display: inline-block; /* Отображаем ссылку как кнопку */
+            margin-top: 10px; /* Отступ сверху */
+            transition: background-color 0.3s; /* Плавный переход цвета */
+        }
+
+        a:hover {
+            background-color: #a2004d; /* Цвет ссылки при наведении */
+        }
+    </style>
+</head>
+<body>
+    <h1>Регистрация</h1>
+    <form method="post">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+    <a href="{{ url_for('login') }}">Вход</a>
+</body>
+</html>

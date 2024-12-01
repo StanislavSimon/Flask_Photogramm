@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <style>
+        body {
+            background-color: #ffccff; /* Розовый фон */
+            font-family: 'Arial', sans-serif; /* Красивый шрифт */
+            text-align: center; /* Центрируем текст */
+            padding: 20px; /* Отступы */
+        }
+
+        h1 {
+            color: #d5006d; /* Цвет заголовка */
+        }
+
+        img {
+            max-width: 200px; /* Максимальная ширина изображений */
+            margin: 10px; /* Отступы между изображениями */
+            border-radius: 10px; /* Скругленные углы */
+        }
+
+        a {
+            text-decoration: none; /* Убираем подчеркивание */
+            color: white; /* Цвет текста кнопок */
+            background-color: #d5006d; /* Цвет фона кнопок */
+            padding: 10px 20px; /* Отступы внутри кнопок */
+            border-radius: 5px; /* Скругленные углы кнопок */
+            margin: 10px; /* Отступы между кнопками */
+            display: inline-block; /* Отображаем кнопки в строку */
+            transition: background-color 0.3s; /* Плавный переход цвета */
+        }
+
+        a:hover {
+            background-color: #a2004d; /* Цвет кнопок при наведении */
+        }
+    </style>
+</head>
+<body>
+    <h1>Фотограмм</h1>
+    {% for file in uploaded_files %}
+        <img src="{{ url_for('uploaded_file', filename=file) }}" alt="Uploaded Image">
+    {% endfor %}
+    <br>
+    <a href="{{ url_for('upload') }}">Загрузите изображение</a>
+    <a href="{{ url_for('login') }}">Войти</a>
+</body>
+</html>
